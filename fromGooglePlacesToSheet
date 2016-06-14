@@ -27,7 +27,7 @@ function PlacesToSheet() {
   
   var sheet = ss.getActiveSheet();
   
-  for(var a = 0; a<tamanho; a++){
+  for(var a = 0; a<size; a++){
     sheet.appendRow([data.results[a].id,data.results[a].name,data.results[a].geometry.location.lat,data.results[a].geometry.location.lng,urlInit+
     data.results[a].geometry.location.lat+','+data.results[a].geometry.location.lng+'&layer=c&heading=235&pitch=10&sensor=false&cbll='+
     data.results[a].geometry.location.lat+','+data.results[a].geometry.location.lng]);
