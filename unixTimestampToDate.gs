@@ -1,4 +1,4 @@
-function getHours(unixTimestamp) {
+function getHour(unixTimestamp) {
   var date = new Date(unixTimestamp*1000);
   return date.getHours();
 }
