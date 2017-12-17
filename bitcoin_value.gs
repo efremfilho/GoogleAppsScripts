@@ -1,3 +1,5 @@
+//Trigger script for Google Sheet - https://go.efrem.io/sheet-bitcoin-value
+
 function getBitcoinPrice() {
   //Date variables
   var date = new Date();
