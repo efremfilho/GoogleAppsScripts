@@ -13,5 +13,6 @@ Scripts:
 * __formToPdf__ - Take every response in a form and tranform in a Google Document and also a PDF, after send an email with the two links for the files.
 * __bitcoin_value_and_compare_currencies__ - The script used to analyse Crypto currencies and you can find [here](https://go.efrem.io/sheet-bitcoin-value).
 * __getCryptoInDollar__ - Function used to convert from crypto currency for US Dollars.
-* __importJurusDataToSpreadsheet__ - Create a menu item to import data from [Jurus](http://jurus.com.br)
-* __google-sheets-functions-to-trello-api__ - A set of functions to use [Trello's API](https://developers.trello.com)
+* __importJurusDataToSpreadsheet__ - Create a menu item to import data from [Jurus](http://jurus.com.br).
+* __google-sheets-functions-to-trello-api__ - A set of functions to use [Trello's API](https://developers.trello.com).
+* __sendEmailViaSendGrid__ - A function to send email via SendGrid's API.
