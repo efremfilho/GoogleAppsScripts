@@ -68,3 +68,62 @@ function addMember(board,member) {
   var response = UrlFetchApp.fetch(url, options);
   return 1;
 }
+
+// Remove user from board using shortUrl
+function excludeMember(row) {
+  var ss = SpreadsheetApp.getActive(); 
+  var sheet = ss.getSheetByName("Participantes");
+  var member  = sheet.getRange("B" + row).getValue();
+  var email  = sheet.getRange("E" + row).getValue();
+  var name = sheet.getRange("C" + row).getValue();
+  var boardUrl = sheet.getRange("J"+ row).getValue();
+  var boardId = "";
+  var idOrganization = '[YOUR Organization]';
+  
+  //Search for board
+  var urlSearch = 'https://api.trello.com/1/organizations/'
+  + idOrganization
+  + '/boards/'
+  + '?key=[YOUR KEY]&token=[YOUR TOKEN]';
+  var optionsSearch =
+      {
+        "method"  : "GET",   
+        "followRedirects" : true,
+        "muteHttpExceptions": true
+      };
+    
+  var responseSearch = UrlFetchApp.fetch(urlSearch, optionsSearch);
+  var jsonSearch = responseSearch.getContentText();
+  var dataSearch = JSON.parse(jsonSearch); 
+  
+  for (var i = 0; i < dataSearch.length; i++) {
+    if (dataSearch[i].shortUrl == boardUrl) {
+      boardId = dataSearch[i].id;
+      break;
+    }
+  }
+
+
+  //Remove member from board
+  var urlRemove = 'https://api.trello.com/1/boards/'
+  + boardId
+  + '/members/' 
+  + member
+  + '?key=[YOUR KEY]&token=[YOUR TOKEN]';
+  
+  var options =
+      {
+        "method"  : "DELETE",   
+        "followRedirects" : true,
+        "muteHttpExceptions": true
+      };
+    
+  var responseRemove = UrlFetchApp.fetch(urlRemove, options);
+  Logger.log(responseRemove);
+  if (responseRemove == "membership not found") {
+    return "User already excluded, we won't send the email";
+  }else{
+    sendEmail(email,name); //Other GAS Script at - https://github.com/efremfilho/GoogleAppsScripts/blob/master/sendEmailViaSendGrid.gs
+    return "User removed and we sent a email from template";
+  }
+}
