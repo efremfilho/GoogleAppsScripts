@@ -16,3 +16,4 @@ Scripts:
 * __importJurusDataToSpreadsheet__ - Create a menu item to import data from [Jurus](http://jurus.com.br).
 * __google-sheets-functions-to-trello-api__ - A set of functions to use [Trello's API](https://developers.trello.com).
 * __sendEmailViaSendGrid__ - A function to send email via SendGrid's API.
+* __google-sheets-functions-to-zoom-api__ - A set of functions to use [Zoom's API](https://marketplace.zoom.us/docs/api-reference/zoom-api/).
