@@ -17,3 +17,4 @@ Scripts:
 * __google-sheets-functions-to-trello-api__ - A set of functions to use [Trello's API](https://developers.trello.com).
 * __sendEmailViaSendGrid__ - A function to send email via SendGrid's API.
 * __google-sheets-functions-to-zoom-api__ - A set of functions to use [Zoom's API](https://marketplace.zoom.us/docs/api-reference/zoom-api/).
+* __uploadZoomRecordingsToDrive__ - Get Meeting records, upload to Google Drive and delete files from Zoom account.
