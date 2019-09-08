@@ -20,3 +20,4 @@ Scripts:
 * __uploadZoomRecordingsToDrive__ - Get Meeting records, upload to Google Drive and delete files from Zoom account.
 * __fufilColumn__ - Fulfil columns with trigger
 * __translateEN2PT__ - Translate one column frm Google Sheets to another column
+* __queryAPITextRazor__ - send data to [TextRazor API](https://www.textrazor.com/) to NLP.
