@@ -22,3 +22,4 @@ Scripts:
 * __translateEN2PT__ - Translate one column frm Google Sheets to another column
 * __queryAPITextRazor__ - send data to [TextRazor API](https://www.textrazor.com/) to NLP.
 * __generateJSON__ - generate a JSON with 3 levels
+* __findRow__ - find a row and return a value in the row
