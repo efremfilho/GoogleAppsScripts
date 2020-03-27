@@ -23,3 +23,4 @@ Scripts:
 * __queryAPITextRazor__ - send data to [TextRazor API](https://www.textrazor.com/) to NLP.
 * __generateJSON__ - generate a JSON with 3 levels
 * __findRow__ - find a row and return a value in the row
+* __scriptToScheduleZoomMeetings__ help people to manage Zoom meetings usage by automatic creating events.
