@@ -26,3 +26,4 @@ Scripts:
 * __scriptToScheduleZoomMeetings__ help people to manage Zoom meetings usage by automatic creating events.
 * __getFeeAmountFromPagSeguroApi__ get fee amount charged by PayPal in a specific transaction.
 * __PayPal__ calls to PayPal API.
+* __postToWordPressFromGoogleSheets__ a wordpress post from Google Sheets.
