@@ -29,3 +29,4 @@ Scripts:
 * __postToWordPressFromGoogleSheets__ - a wordpress post from Google Sheets.
 * __checkFreeEmails__ - check ii is a free domain email.
 * __getDataFromEmail__ - get domain form a email and check title and description from the site via opengraph.
+* __getFoldersFromFolder__ - get inside folders from a specific folder.
