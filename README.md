@@ -31,4 +31,4 @@ Scripts:
 * __getDataFromEmail__ - get domain form a email and check title and description from the site via opengraph.
 * __getFoldersFromFolder__ - get inside folders from a specific folder.
 * __filter_array_2_dimension__ - clean empty data from a two dimension array.
-* __quickchart__ - create a image of graph using https://quickchart.io/documentation/
+* __quickchart__ - create a image of graph using [Quickchart](https://quickchart.io/documentation/).
