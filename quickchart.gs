@@ -1,7 +1,7 @@
 //Google Sheet example - https://docs.google.com/spreadsheets/d/1pcOueX2u-XdmK2nzTnhLhkYVGHlRI0fVvCgR6HS2jw0/edit?usp=sharing
 
 function quickchart(type_of_chart,labels_raw,labels_data,data_raw) {
-  let labels = filter_array(labels_raw),
+  let labels = build_labels(labels_raw),
       data = build_data(data_raw),
       url_base = "https://quickchart.io/chart?c=",
       url_data = "";
@@ -39,7 +39,7 @@ function quickchart(type_of_chart,labels_raw,labels_data,data_raw) {
   return url.replace(/\"/g, '');  
 }
 
-function filter_array(test_array) {
+function build_labels(test_array) {
   let index = -1,
       arr_length = test_array ? test_array.length : 0,
       resIndex = -1,
