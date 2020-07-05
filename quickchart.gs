@@ -1,6 +1,6 @@
 //Google Sheet example - https://docs.google.com/spreadsheets/d/1pcOueX2u-XdmK2nzTnhLhkYVGHlRI0fVvCgR6HS2jw0/edit?usp=sharing
 
-function quickchart(type_of_chart,labels_raw,labels_data,data_raw) {
+function quickchart(type_of_chart,labels_raw,data_raw) {
   let labels = build_labels(labels_raw),
       data = build_data(data_raw),
       url_base = "https://quickchart.io/chart?c=",
@@ -19,7 +19,6 @@ function quickchart(type_of_chart,labels_raw,labels_data,data_raw) {
           + data + "}}";
           
           break;
-          // TODO
           //        case "scatter":
           //        case "bubble":
           //        case "radialGauge":
