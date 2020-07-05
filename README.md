@@ -30,3 +30,4 @@ Scripts:
 * __checkFreeEmails__ - check ii is a free domain email.
 * __getDataFromEmail__ - get domain form a email and check title and description from the site via opengraph.
 * __getFoldersFromFolder__ - get inside folders from a specific folder.
+* __filter_array_2_dimension__ - clean empty data from a two dimension array.
