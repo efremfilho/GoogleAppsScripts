@@ -101,3 +101,19 @@ function build_data(test_array) {
   
   return result;
 }
+
+function buildDigraph(dataRaw) {
+  
+  //dataRaw = SpreadsheetApp.getActive().getSheetByName("Opportunity tree").getSheetValues(1, 1, 13, 2); //Example of data from pivot table with 2 lines dimesions and no total aggregators.
+  let url = "https://quickchart.io/graphviz?graph=digraph{";
+  let urlData = "";
+  let node1 = "";
+  for (let i = 1; i < dataRaw.length; i++){
+    if (dataRaw[i][0]){
+      node1 = dataRaw[i][0].replace(/[^\w\s]/gi, '');
+    }
+    urlData = urlData + "\n" + node1 + "->" + dataRaw[i][1].replace(/[^\w\s]/gi, '') + ";";
+  }
+  return (url + urlData.split(' ').join('_') + "}");
+}
+
