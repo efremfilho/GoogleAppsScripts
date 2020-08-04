@@ -23,12 +23,4 @@ Scripts:
 * __queryAPITextRazor__ - send data to [TextRazor API](https://www.textrazor.com/) to NLP.
 * __generateJSON__ - generate a JSON with 3 levels
 * __findRow__ - find a row and return a value in the row
-* __scriptToScheduleZoomMeetings__ - help people to manage Zoom meetings usage by automatic creating events.
-* __getFeeAmountFromPagSeguroApi__ - get fee amount charged by PayPal in a specific transaction.
-* __PayPal__ - calls to PayPal API.
-* __postToWordPressFromGoogleSheets__ - a wordpress post from Google Sheets.
-* __checkFreeEmails__ - check ii is a free domain email.
-* __getDataFromEmail__ - get domain form a email and check title and description from the site via opengraph.
-* __getFoldersFromFolder__ - get inside folders from a specific folder.
-* __filter_array_2_dimension__ - clean empty data from a two dimension array.
-* __quickchart__ - create a image of graph using [Quickchart](https://quickchart.io/documentation/).
+* __random1_1__ - randomize 1-1 for squads
