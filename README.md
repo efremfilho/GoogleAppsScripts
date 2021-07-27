@@ -25,3 +25,4 @@ Scripts:
 * __findRow__ - find a row and return a value in the row
 * __random1_1__ - randomize 1-1 for squads
 * __buildSankeyGraph3Levels__ - build a three level sankey graph
+* __callZapierWebhook__ - call a webhook from Zapier to process a batch
