@@ -27,3 +27,4 @@ Scripts:
 * __buildSankeyGraph3Levels__ - build a three level sankey graph
 * __splitCellToRows__ - take a column and with a delimiter create new rows
 * __callZapierWebhook__ - call a webhook from Zapier to process a batch
+* __extractSpeechFromPdf__ - get speech from a pdf file
