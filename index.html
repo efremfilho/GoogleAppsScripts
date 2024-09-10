@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <!-- Incluir o Marked.js para renderizar Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1, h2 {
+        color: #333;
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="text"], textarea, input[type="file"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="button"] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+      #formattedResponse {
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        margin-bottom: 20px;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Processar Requisição</h1>
+    <form id="requestForm">
+      <label for="fileInput">Selecione o arquivo:</label><br>
+      <input type="file" id="fileInput" name="fileInput" accept=".pdf,.doc,.docx,.txt"><br><br>
+
+      <label for="messageContent">Conteúdo da Mensagem:</label><br>
+      <textarea id="messageContent" name="messageContent" rows="4" cols="50" placeholder="Insira sua mensagem aqui..."></textarea><br><br>
+
+      <input type="button" value="Enviar" onclick="processRequest()">
+    </form>
+
+    <h2>Resposta Formatada:</h2>
+    <div id="formattedResponse"></div>
+
+    <h2>JSON Completo:</h2>
+    <pre id="response"></pre>
+
+    <script>
+      function processRequest() {
+        const fileInput = document.getElementById('fileInput').files[0];
+        const messageContent = document.getElementById('messageContent').value;
+
+        if (!fileInput) {
+          alert('Por favor, selecione um arquivo para enviar.');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const fileContent = e.target.result;
+
+          google.script.run.withSuccessHandler(function(response) {
+            if (response.error) {
+              document.getElementById('formattedResponse').innerText = 'Erro: ' + response.error;
+              document.getElementById('response').innerText = JSON.stringify(response, null, 2);
+              return;
+            }
+
+            // Extrair o "value" do primeiro item de "content"
+            const assistantMessage = response.data.find(item => item.role === 'assistant');
+            let formattedText = '';
+            if (assistantMessage && assistantMessage.content.length > 0) {
+              formattedText = assistantMessage.content[0].text.value;
+            }
+
+            // Renderizar o Markdown para HTML
+            const htmlContent = marked.parse(formattedText);
+            document.getElementById('formattedResponse').innerHTML = htmlContent;
+
+            // Exibir o JSON completo
+            document.getElementById('response').innerText = JSON.stringify(response, null, 2);
+          }).uploadFileAndProcess(fileContent, fileInput.name, messageContent);
+        };
+        
+        reader.readAsDataURL(fileInput);
+      }
+    </script>
+  </body>
+</html>
