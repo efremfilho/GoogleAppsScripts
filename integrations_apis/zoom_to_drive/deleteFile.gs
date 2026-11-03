@@ -1,8 +1,8 @@
 //Function called by getRecordingList.gs
 function deleteFile(meetingId) {
-  var userId = [YOUR USER ID];
+  var userId = '[YOUR USER ID]';
   var url = 'https://api.zoom.us/v2/meetings/' + meetingId + '/recordings?action=trash';
-  var token = [YOUR TOKEN];
+  var token = '[YOUR TOKEN]';
   var options =
       {
         'method'  : 'DELETE',   

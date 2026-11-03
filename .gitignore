@@ -1,0 +1,53 @@
+# Google Clasp & Apps Script credentials
+.clasprc.json
+.claspignore
+
+# Secrets and environment files
+.env
+.env.*
+*.env
+credentials.json
+secrets.json
+service_account.json
+client_secret*.json
+*.pem
+*.key
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python & Jupyter (in case scripts are run locally)
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.venv/
+*/.venv/
+venv/
+*/venv/
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary exports and data files
+*.csv
+*.xlsx
+*.tsv
+*.pdf

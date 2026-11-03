@@ -1,14 +1,14 @@
 //The code you should run
 function getRecordingList() {
-  var date = [YOUR DATE IN FORMAT YYYY-MM-DD];
+  var date = '[YOUR DATE IN FORMAT YYYY-MM-DD]';
   var topic;
   var mimeType;
   var urlToDownload;
   var file;
   var meetingDeleted;
-  var userId = [YOUR USER ID];
+  var userId = '[YOUR USER ID]';
   var url = 'https://api.zoom.us/v2/users/' + userId + '/recordings?from=' + date + '&mc=false&page_size=300';
-  var token = [YOUR TOKEN];
+  var token = '[YOUR TOKEN]';
   var options =
       {
         'method'  : 'GET',   
